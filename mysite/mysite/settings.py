@@ -72,7 +72,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+# 数据库配置,字典写法：字典的每个键值对用冒号(:)分割，每个对之间用逗号(,)分割，整个字典包括在花括号({})中
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

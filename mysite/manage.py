@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks.
-一个命令行工具，管理Django的交互脚本。"""
+一个命令行工具，管理Django的交互脚本。
+python manage.py runserver  ---运行Django项目
+
+"""
 import os
 import sys
 
