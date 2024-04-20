@@ -51,11 +51,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'mysite.urls'
-
+#当render需要base_site.html的时候，Django执行机制会首先去寻找DIRS中是否有base_site.html模板，
+# 结果找到了！于是它不再继续寻找，所以admin源码中的base_site.html模板被忽视了，成功达到了我们的目的。
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'pools/templates'),],
+        # 'DIRS': [os.path.join(BASE_DIR, 'pools/templates'),],
+        'DIRS': [BASE_DIR / 'templates'],  # 添加这一行,DIRS是一个文件系统目录的列表，是模板的搜索路径
+        # 当加载Django模板时，会在DIRS中进行查找。这里面的目录往往都是全局性的，区别于app自己内部的templates目录。
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
